@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    img {
+        vertical-align: middle;
+        height: 500px;
+        width: 500px;
+    }
+    .border {
+      border-right: 1px solid black;
+    }
+    h2 {
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission To Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+  
+    <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="heading">Latest Mars News</h2>
+        <b><h3 class="heading">{{final_dict.Latest_Mars_Title}}</h3></b>
+        <h4>{{final_dict.News}}</h4>
+    
+    <div class="container">
+      <div class="row"> 
+        <div class ="col-md-12">
+        </div>
+        <div class="col-md-5">
+          <b><h2 class="heading">Featured Mars Image</h2></b>
+          <img src="{{final_dict.Featured_Picture}}">
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-5" style="padding-top: 20px;">
+            <span class="border">
+            <b><h3>Current Weather On Mars</h3></b>
+             <p>{{final_dict.Twitter}}</p>
+            </span>
+            <div class="row" style="padding-left: 16px;">
+              <b></b><h3 class="header" > Mars Facts</h3></b>
+              <table>
+                {{final_dict.Table| safe}}
+              </table>
+            </div>
+        </div>
+        </div>
+      </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <b><h2 class="heading">Mars Hemispheres</h2>
+        </div>
+        <div class="col-md-6">
+
+          <span class="border border-danger">
+            <img src="{{ final_dict.Hem_Img_URLs[0].img_url }}">
+            <b><h3>{{ final_dict.Hem_Img_URLs[0].title }}</h3></b>
+          </span> 
+
+          <span class="border border-danger">
+            <img src="{{ final_dict.Hem_Img_URLs[1].img_url }}">
+            <b><h3>{{ final_dict.Hem_Img_URLs[1].title }}</h3></b>
+          </span>
+
+        </div>
+        <div class="col-md-6">
+      
+          <span class="border border-danger">
+            <img src="{{ final_dict.Hem_Img_URLs[2].img_url }}">
+            <b><h3>{{ final_dict.Hem_Img_URLs[2].title }}</h3></b>
+          </span>
+
+          <span class="border border-danger">
+            <img src="{{ final_dict.Hem_Img_URLs[3].img_url }}">
+            <b><h3>{{ final_dict.Hem_Img_URLs[3].title }}</h3></b>
+          </span>
+
+        </div>
+      </div>
+    </div>
+    </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</body>
+
+</html>
